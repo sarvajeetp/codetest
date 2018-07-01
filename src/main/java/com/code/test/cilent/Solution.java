@@ -3,6 +3,8 @@ package com.code.test.cilent;
 import com.code.test.animal.Cat;
 import com.code.test.animal.Dog;
 import com.code.test.bird.*;
+import com.code.test.fish.ClownFish;
+import com.code.test.fish.Shark;
 import com.code.test.nonliving.Phone;
 
 public class Solution {
@@ -36,6 +38,15 @@ public class Solution {
 
         Parrot parrot_near_phone = new Parrot(new Phone());
         parrot_near_phone.make_sound();
+
+        ClownFish clownFish = new ClownFish();
+        clownFish.make_joke();
+        System.out.println("ClownFish size is "+clownFish.getSize());
+        System.out.println("ClownFish color is "+clownFish.getColor());
+
+        Shark shark = new Shark();
+        System.out.println("Shark size is "+shark.getSize());
+        System.out.println("Shark color is "+shark.getColor());
     }
 
 }
