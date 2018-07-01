@@ -1,6 +1,8 @@
 package com.code.test.cilent;
 
 import com.code.test.bird.Bird;
+import com.code.test.bird.Chicken;
+import com.code.test.bird.Duck;
 import com.code.test.bird.Parrot;
 
 public class Solution {
@@ -12,6 +14,13 @@ public class Solution {
         parrot.fly();
         parrot.walk();
         ((Parrot)parrot).sing();
+
+        Chicken chicken = new Chicken();
+        chicken.make_sound();
+
+        Duck duck = new Duck();
+        duck.swim();
+        duck.make_sound();
     }
 
 }
