@@ -1,9 +1,6 @@
 package com.code.test.cilent;
 
-import com.code.test.bird.Bird;
-import com.code.test.bird.Chicken;
-import com.code.test.bird.Duck;
-import com.code.test.bird.Parrot;
+import com.code.test.bird.*;
 
 public class Solution {
     /* So Instead of Initializing Bird, which is general class. I would rather instatiate
@@ -21,6 +18,9 @@ public class Solution {
         Duck duck = new Duck();
         duck.swim();
         duck.make_sound();
+
+        Rooster rooster = new Rooster(chicken);
+        rooster.make_sound();
     }
 
 }
