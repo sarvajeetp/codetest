@@ -7,7 +7,6 @@ import com.code.test.behaviour.Walking;
 
 public class Chicken implements Animal, Sound, Walking {
     public Chicken(){
-        System.out.println("I'm Chicken");
     }
 
     @Override
@@ -21,4 +20,10 @@ public class Chicken implements Animal, Sound, Walking {
     public String walk() {
         return DefaultWalking.INSTANCE.walk();
     }
+
+    @Override
+    public String toString(){
+        return "Chicken";
+    }
+
 }

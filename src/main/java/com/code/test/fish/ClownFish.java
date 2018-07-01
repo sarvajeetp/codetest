@@ -9,7 +9,6 @@ public class ClownFish implements Fish{
     private COLORS color;
 
     public ClownFish(){
-        System.out.println("I'm ClownFish");
         this.size = SIZE.SMALL;
         this.color = COLORS.ORANGE;
     }
@@ -40,4 +39,10 @@ public class ClownFish implements Fish{
     public void setColor(COLORS color) {
         this.color = color;
     }
+
+    @Override
+    public String toString(){
+        return "ClownFish";
+    }
+
 }

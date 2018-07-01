@@ -14,4 +14,9 @@ public class Cat implements Animal, Walking, Sound {
     public String walk() {
         return DefaultWalking.INSTANCE.walk();
     }
+
+    @Override
+    public String toString(){
+        return "Cat";
+    }
 }

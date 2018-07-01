@@ -10,4 +10,10 @@ public class Dolphin implements Animal, Swimming {
         System.out.println(swimming);
         return swimming;
     }
+
+    @Override
+    public String toString(){
+        return "Dolphin";
+    }
+
 }

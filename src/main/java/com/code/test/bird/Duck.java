@@ -4,7 +4,6 @@ import com.code.test.behaviour.*;
 
 public class Duck implements Bird, Swimming, Sound {
     public Duck(){
-        System.out.println("I'm Duck");
     }
 
     @Override
@@ -28,4 +27,10 @@ public class Duck implements Bird, Swimming, Sound {
         System.out.println(sound);
         return sound;
     }
+
+    @Override
+    public String toString(){
+        return "Duck";
+    }
+
 }

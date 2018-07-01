@@ -10,7 +10,6 @@ public class Parrot implements Bird, Singing, Sound {
     private Sound accompaniedAnimal;
 
     public Parrot(){
-        System.out.println("I'm Parrot");
     }
 
     public Parrot(Sound accompaniedAnimal){
@@ -35,4 +34,10 @@ public class Parrot implements Bird, Singing, Sound {
     public String make_sound() {
         return (accompaniedAnimal != null?accompaniedAnimal.make_sound():this.sing());
     }
+
+    @Override
+    public String toString(){
+        return "Parrot";
+    }
+
 }

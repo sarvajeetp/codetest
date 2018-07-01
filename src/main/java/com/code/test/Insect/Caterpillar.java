@@ -5,7 +5,6 @@ import com.code.test.behaviour.Walking;
 
 public class Caterpillar implements Insect, Walking {
     public Caterpillar(){
-        System.out.println("I'm Caterpillar");
     }
 
     @Override
@@ -14,4 +13,10 @@ public class Caterpillar implements Insect, Walking {
         System.out.println(crawling);
         return crawling;
     }
+
+    @Override
+    public String toString(){
+        return "Caterpillar";
+    }
+
 }

@@ -7,7 +7,6 @@ import com.code.test.behaviour.Walking;
 public class Rooster implements Animal, Sound, Walking {
     Chicken chicken;
     public Rooster(Chicken chicken){
-        System.out.println("I'm Rooster");
         this.chicken = chicken;
     }
 
@@ -22,4 +21,10 @@ public class Rooster implements Animal, Sound, Walking {
     public String walk() {
         return chicken.walk();
     }
+
+    @Override
+    public String toString(){
+        return "Rooster";
+    }
+
 }

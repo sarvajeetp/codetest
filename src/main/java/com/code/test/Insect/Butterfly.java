@@ -7,7 +7,6 @@ public class Butterfly implements Insect, Flying {
     private Caterpillar caterpillar;
 
     public Butterfly(Caterpillar caterpillar){
-        System.out.println("Caterpillar became Butterfly");
         this.caterpillar = caterpillar;
     }
 
@@ -15,4 +14,10 @@ public class Butterfly implements Insect, Flying {
     public String fly() {
         return DefaultFlying.INSTANCE.fly();
     }
+
+    @Override
+    public String toString(){
+        return "Butterfly";
+    }
+
 }

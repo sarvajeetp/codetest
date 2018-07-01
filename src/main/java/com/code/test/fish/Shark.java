@@ -8,7 +8,6 @@ public class Shark implements Fish {
     private SIZE size;
     private COLORS color;
     public Shark(){
-        System.out.println("I'm Shark");
         this.size = SIZE.LARGE;
         this.color = COLORS.GREY;
     }
@@ -38,4 +37,10 @@ public class Shark implements Fish {
     public void setColor(COLORS color) {
         this.color = color;
     }
+
+    @Override
+    public String toString(){
+        return "Shark";
+    }
+
 }

@@ -2,74 +2,49 @@ package com.code.test.cilent;
 
 import com.code.test.Insect.Butterfly;
 import com.code.test.Insect.Caterpillar;
+import com.code.test.Insect.Insect;
+import com.code.test.animal.Animal;
 import com.code.test.animal.Cat;
 import com.code.test.animal.Dog;
+import com.code.test.behaviour.Flying;
+import com.code.test.behaviour.Singing;
+import com.code.test.behaviour.Swimming;
+import com.code.test.behaviour.Walking;
 import com.code.test.bird.*;
 import com.code.test.fish.ClownFish;
 import com.code.test.fish.Dolphin;
+import com.code.test.fish.Fish;
 import com.code.test.fish.Shark;
 import com.code.test.nonliving.Phone;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Solution {
     /* So Instead of Initializing Bird, which is general class. I would rather instatiate
      * specialized Bird class for e.g. Parrot
     */
     public static void main(String[] args) {
-        Bird parrot = new Parrot();
-        parrot.fly();
-        parrot.walk();
-        ((Parrot)parrot).sing();
-        System.out.println();
+        Bird[] birds = new Bird[]{new Duck(), new Parrot()};
+        Fish[] fishes = new Fish[]{new ClownFish(), new Shark()};
+        Insect[] insects = new Insect[]{new Caterpillar(), new Butterfly(new Caterpillar())};
+        Animal[] specializedAnimals = new Animal[]{new Rooster(new Chicken()), new Chicken(),new Dolphin(), new Cat(), new Dog()};
+        List<Object> list = Arrays.asList(birds, fishes, insects, specializedAnimals).stream().flatMap(animal -> Arrays.stream(animal)).
+                collect(Collectors.toList());
 
-        Chicken chicken = new Chicken();
-        chicken.make_sound();
-        System.out.println();
-
-        Duck duck = new Duck();
-        duck.swim();
-        duck.make_sound();
-        System.out.println();
-
-        Rooster rooster = new Rooster(chicken);
-        rooster.make_sound();
-        System.out.println();
-
-        Parrot parrot_near_cat = new Parrot(new Cat());
-        parrot_near_cat.make_sound();
-        System.out.println();
-
-        Parrot parrot_near_dog = new Parrot(new Dog());
-        parrot_near_dog.make_sound();
-        System.out.println();
-
-        Parrot parrot_near_duck = new Parrot(new Duck());
-        parrot_near_duck.make_sound();
-        System.out.println();
-
-        Parrot parrot_near_phone = new Parrot(new Phone());
-        parrot_near_phone.make_sound();
-        System.out.println();
-
-        ClownFish clownFish = new ClownFish();
-        clownFish.make_joke();
-        System.out.println("ClownFish size is "+clownFish.getSize());
-        System.out.println("ClownFish color is "+clownFish.getColor());
-        System.out.println();
-
-        Shark shark = new Shark();
-        System.out.println("Shark size is "+shark.getSize());
-        System.out.println("Shark color is "+shark.getColor());
-
-        Dolphin dolphin = new Dolphin();
-        dolphin.swim();
-        System.out.println();
-
-        Caterpillar caterpillar = new Caterpillar();
-        caterpillar.walk();
-        System.out.println();
-
-        Butterfly butterfly = new Butterfly(caterpillar);
-        butterfly.fly();
+        List swimmingAnimals = list.stream().filter(o -> (o instanceof Animal && o instanceof Swimming)).collect(Collectors.toList());
+        List flyingAnimals = list.stream().filter(o -> (o instanceof Animal && o instanceof Flying)).collect(Collectors.toList());
+        List singingAnimals = list.stream().filter(o -> (o instanceof Animal && o instanceof Singing)).collect(Collectors.toList());
+        List walkingAnimals = list.stream().filter(o -> (o instanceof Animal && o instanceof Walking)).collect(Collectors.toList());
+        System.out.println("List of swimming animals: "+swimmingAnimals);
+        System.out.println("No of swimming animals: "+swimmingAnimals.size());
+        System.out.println("List of flying animals: "+flyingAnimals);
+        System.out.println("No of flying animals: "+flyingAnimals.size());
+        System.out.println("List of singing animals: "+singingAnimals);
+        System.out.println("No of singing animals: "+singingAnimals.size());
+        System.out.println("List of walking animals: "+walkingAnimals);
+        System.out.println("No of walking animals: "+walkingAnimals.size());
 
     }
 
