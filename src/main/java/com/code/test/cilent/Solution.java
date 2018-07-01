@@ -1,5 +1,7 @@
 package com.code.test.cilent;
 
+import com.code.test.Insect.Butterfly;
+import com.code.test.Insect.Caterpillar;
 import com.code.test.animal.Cat;
 import com.code.test.animal.Dog;
 import com.code.test.bird.*;
@@ -61,6 +63,13 @@ public class Solution {
         Dolphin dolphin = new Dolphin();
         dolphin.swim();
         System.out.println();
+
+        Caterpillar caterpillar = new Caterpillar();
+        caterpillar.walk();
+        System.out.println();
+
+        Butterfly butterfly = new Butterfly(caterpillar);
+        butterfly.fly();
 
     }
 
